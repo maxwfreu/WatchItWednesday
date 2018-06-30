@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
+          <title>Watch it Wednesday</title>
           <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png" />

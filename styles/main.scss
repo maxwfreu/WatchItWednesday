@@ -28,3 +28,45 @@ body {
     margin: 0 auto;
   }
 }
+
+.lds-ring {
+  display: inline-block;
+  height: 64px;
+  position: relative;
+  width: 64px;
+
+  div {
+    animation: lds-ring 1.2s cubic-bezier(.5, 0, .5, 1) infinite;
+    border: 6px solid $highlight-color;
+    border-color: $highlight-color transparent transparent;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: block;
+    height: 51px;
+    margin: 6px;
+    position: absolute;
+    width: 51px;
+
+    &:nth-child(1) {
+      animation-delay: -.45s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: -.3s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: -.15s;
+    }
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

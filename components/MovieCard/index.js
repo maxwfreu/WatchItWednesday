@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 export default class MovieCard extends React.Component {
   render() {
     // NOTE: this is probably the dumbest code I have ever written. I may or may not have had a few drinks.
-    const mainImgClass = this.props.isMain ? 'main-image-art' : 'default-image alternate-image-art';
-    const mainArtClass = this.props.isMain ? 'main-image-art' : 'default-image-art alternate-image-art';
+    let mainImgClass = this.props.isMain ? 'main-image' : 'default-image loading-image-art';
+    const mainArtClass = this.props.isMain ? 'main-art-loading loading-image-art' : 'default-image loading-image-art';
+    if (this.props.source && !this.props.isMain) {
+      mainImgClass = 'default-image';
+    }
     return (
       <React.Fragment>
         {this.props.source ? (

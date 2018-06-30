@@ -8,11 +8,16 @@
   },
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",
+    "glob": "^7.1.2",
     "hoek": "^5.0.3",
     "next": "^6.1.1",
     "node-sass": "^4.9.0",
+    "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.11"
   }
 }
