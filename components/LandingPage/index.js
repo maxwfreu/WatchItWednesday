@@ -18,7 +18,7 @@ export default class LandingPage extends React.Component {
         </p>
         <p className="about-text">
           {`
-            I update this website weekly with movies that I think are perfect the proveriable Wednesday. By that I mean, movies that aren't great, but aren't bad. Movies that are just sorta, 'Meh, yeah that was decent'. The sort of movie where you can get up, prepare a quick meal, and jump right back in without worrying about missing anything. The perfect movie for a lazy afternoon after a long day at work on a Wednesday. 
+            I update this website weekly with movies that I think are perfect for the proveriable Wednesday. By that I mean, movies that aren't great, but aren't bad. Movies that are just sorta, 'Meh, yeah that was decent'. The sort of movie where you can get up, prepare a quick meal, and jump right back in without worrying about missing anything. The perfect movie for a lazy afternoon after a long day at work on a Wednesday. 
           `}
         </p>
        </div>
