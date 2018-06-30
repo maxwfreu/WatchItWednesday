@@ -1,0 +1,55 @@
+$font-size: 50px;
+
+body {
+  background-color: #12130F;
+  color: #E5DCC5;
+}
+
+.landing-wrap {
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  flex-direction: column;
+}
+
+.default-image-art {
+  background: linear-gradient(to bottom, #108dc7, #ef8e38);
+  filter: blur(5px);
+}
+
+.main-image-art {
+  height: 400px;
+  min-width: 250px;
+  width: 200px;
+}
+
+.alternate-image-art {
+  height: 400px;
+  min-width: 100px;
+  width: 80px;
+}
+
+.main-movie-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.main-movie-details-wrap {
+  padding-left: 5%;
+  width: 100%;
+}
+
+.alternate-movies-wrap {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+
+  .default-image-art {
+    width: 25%;
+    margin-right: 2%;
+    margin-left: 2%;
+  }
+}
