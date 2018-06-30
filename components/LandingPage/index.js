@@ -75,7 +75,7 @@ export default class LandingPage extends React.Component {
         <h1 id="about" className="about-header"> About this site </h1>
         <p className="about-text">
           {`
-            Searching for medocrity? Yearning for something to fill the deafening silencing as you scroll past purple links on your favorite reddit viewer? Well, you're in luck. You have somehow stumbled upon my list of medocrity.
+            Searching for mediocrity? Yearning for something to fill the deafening silencing as you scroll past purple links on your favorite reddit viewer? Well, you're in luck. You have somehow stumbled upon my list of medocrity.
           `}
         </p>
         <p className="about-text">
