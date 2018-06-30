@@ -7,7 +7,7 @@ export default class MainMovieDetails extends React.Component {
     if (this.props.title === '...') {
       return (
         <div className="main-movie-details-loading-wrap">
-          <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+          <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
         )
     }

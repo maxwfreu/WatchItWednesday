@@ -15,7 +15,8 @@
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-ga": "^2.5.3"
   },
   "devDependencies": {
     "css-loader": "^0.28.11"
