@@ -20,6 +20,8 @@ body {
   filter: blur(5px);
 }
 
+@import 'constants';
+
 .main-image-art {
   height: 450px;
   min-width: 300px;
@@ -35,11 +37,12 @@ body {
 .main-movie-wrap {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
+  justify-content: center;
 }
 
 .main-movie-details-wrap {
-  padding-left: 5%;
   width: 100%;
 
   h1:first-of-type {
@@ -48,14 +51,15 @@ body {
 }
 
 .alternate-movies-wrap {
+  align-items: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 50px;
 
   .default-image-art {
-    width: 25%;
-    margin-right: 2%;
-    margin-left: 2%;
+    width: 100%;
+    max-width: 350px;
+    margin: 2%;
   }
 }
 
@@ -66,4 +70,23 @@ body {
 
 .about-text {
   font-size: 18px;
+}
+
+@media (min-width: $sm) {
+  .main-movie-wrap {
+    flex-wrap: nowrap;
+  }
+  .main-movie-details-wrap {
+    padding-left: 5%;
+  }
+
+  .alternate-movies-wrap {
+    flex-direction: row;
+
+    .default-image-art {
+      width: 25%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }
