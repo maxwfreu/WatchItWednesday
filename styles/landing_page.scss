@@ -28,6 +28,12 @@ body {
   width: 200px;
 }
 
+.default-image {
+  height: 400px;
+  min-width: 100px;
+  width: 80px;
+}
+
 .alternate-image-art {
   height: 400px;
   min-width: 100px;
@@ -56,9 +62,10 @@ body {
   flex-direction: column;
   margin-top: 50px;
 
+  .default-image,
   .default-image-art {
     width: 100%;
-    max-width: 350px;
+    max-width: 300px;
     margin: 2%;
   }
 }
@@ -83,6 +90,7 @@ body {
   .alternate-movies-wrap {
     flex-direction: row;
 
+    .default-image,
     .default-image-art {
       width: 25%;
       margin-top: 0;
