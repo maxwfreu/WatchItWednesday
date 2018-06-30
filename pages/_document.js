@@ -13,6 +13,7 @@ export default class MyDocument extends Document {
           <link rel="mask-icon" href="../static/images/favicon/safari-pinned-tab.svg" color="#5bbad5" />
           <meta name="msapplication-TileColor" content="#da532c" />
           <meta name="theme-color" content="#ffffff" />
+          <meta name="google-site-verification" content="iF6G-tMnLJsk9rj0yKs365B5UVfg9vCQO40glWNUqsA" />
           <link rel="stylesheet" href="/_next/static/style.css" />
           <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
         </Head>
