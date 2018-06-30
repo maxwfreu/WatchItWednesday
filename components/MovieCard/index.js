@@ -9,7 +9,7 @@ export default class MovieCard extends React.Component {
     return (
       <React.Fragment>
         {this.props.source ? (
-           <img src={this.props.source} alt="Movie Art" className={mainImgClass} />
+           <img src={this.props.source} alt="Movie Art" className={mainImgClass} onClick={this.props.onClick} />
         ):(
           <div className={mainArtClass} />
         )}
@@ -21,9 +21,11 @@ export default class MovieCard extends React.Component {
 MovieCard.propTypes = {
   source: PropTypes.string,
   isMain: PropTypes.bool,
+  onClick: PropTypes.func,
 }
 
 MovieCard.defaultProps = {
   source: null,
   isMain: false,
+  onClick: () => true,
 }

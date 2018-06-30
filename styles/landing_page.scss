@@ -1,26 +1,24 @@
-$font-size: 50px;
+@import 'constants';
 
 body {
-  background-color: #12130F;
-  color: #E5DCC5;
+  background-color: $background-color;
+  color: $text-color;
   font-family: 'Karla', sans-serif;
 }
 
 .landing-wrap {
   display: flex;
+  flex-direction: column;
+  padding-bottom: 2%;
   padding-left: 10%;
   padding-right: 10%;
   padding-top: 2%;
-  padding-bottom: 2%;
-  flex-direction: column;
 }
 
 .default-image-art {
   background: linear-gradient(to bottom, #108dc7, #ef8e38);
   filter: blur(5px);
 }
-
-@import 'constants';
 
 .main-image-art {
   height: 450px;
@@ -44,8 +42,8 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
+  width: 100%;
 }
 
 .main-movie-details-wrap {
@@ -53,6 +51,20 @@ body {
 
   h1:first-of-type {
     margin-top: 0;
+  }
+
+  h3,
+  h4 {
+    color: $highlight-color;
+  }
+
+  .main-movie-details-title {
+    display: flex;
+
+    p {
+      align-self: center;
+      margin-top: 0;
+    }
   }
 }
 
@@ -64,15 +76,16 @@ body {
 
   .default-image,
   .default-image-art {
-    width: 100%;
+    cursor: pointer;
+    margin: 1%;
     max-width: 300px;
-    margin: 2%;
+    width: 100%;
   }
 }
 
 .about-header {
-  text-align: center;
   margin-top: 80px;
+  text-align: center;
 }
 
 .about-text {
@@ -83,6 +96,7 @@ body {
   .main-movie-wrap {
     flex-wrap: nowrap;
   }
+
   .main-movie-details-wrap {
     padding-left: 5%;
   }
@@ -92,9 +106,18 @@ body {
 
     .default-image,
     .default-image-art {
-      width: 25%;
-      margin-top: 0;
       margin-bottom: 0;
+      margin-top: 0;
+      width: 25%;
+
+      &:first-of-type, {
+        margin-left: 0;
+      }
+
+      &:last-of-type, {
+        margin-right: 0;
+      }
+
     }
   }
 }

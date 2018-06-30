@@ -1,15 +1,73 @@
 import React from 'react';
 import MainMovie from '../MainMovie';
 import AlternateMovies from '../AlternateMovies';
+import PropTypes from 'prop-types';
 
 export default class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      mainIMDBID: props.mainIMDBID,
+      alternateIMDBIDs: props.alternateIMDBIDs,
+      movieDetails: {},
+    }
+    this.getMovieDetails = this.getMovieDetails.bind(this);
+    this.initializeMovies = this.initializeMovies.bind(this);
+    this.setMainMovie = this.setMainMovie.bind(this);
+  }
+
+  componentDidMount() {
+    this.initializeMovies(this.props.mainIMDBID);
+  }
+
+  async initializeMovies() {
+    await this.getMovieDetails(this.props.mainIMDBID);
+    for(let id in this.props.alternateIMDBIDs) {
+      await this.getMovieDetails(this.props.alternateIMDBIDs[id]);
+    }
+  }
+
+  async getMovieDetails(id) {
+    const that = this;
+    const API_KEY = 'REPLACE_THIS';
+    const response = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
+    const json = await response.json();
+    const movieDetails = this.state.movieDetails;
+    movieDetails[id] = {
+      title: json.Title,
+      year: json.Year,
+      cast: json.Actors,
+      plot: json.Plot,
+      runtime: json.Runtime,
+      poster: json.Poster,
+    };
+    this.setState({
+      movieDetails: movieDetails,
+    });
+  }
+
+  setMainMovie(newMainMovieId) {
+    const oldMainMovieId = this.state.mainIMDBID;
+    const newAlternateIMDBIDs = this.state.alternateIMDBIDs;
+    const index = newAlternateIMDBIDs.indexOf(newMainMovieId);
+    newAlternateIMDBIDs[index] = this.state.mainIMDBID;
+    this.setState({
+      mainIMDBID: newMainMovieId,
+      alternateIMDBIDs: newAlternateIMDBIDs,
+    })
+  }
+
   render() {
     return (
        <div className="landing-wrap">
         <MainMovie
-          source="../../static/images/knowing.jpg"
+          {...this.state.movieDetails[this.state.mainIMDBID]}
         />
-        <AlternateMovies />
+        <AlternateMovies
+          movieDetails={this.state.movieDetails}
+          alternateIMDBIDs={this.state.alternateIMDBIDs}
+          setMainMovie={this.setMainMovie}
+        />
         <h1 id="about" className="about-header"> About this site </h1>
         <p className="about-text">
           {`
@@ -24,4 +82,9 @@ export default class LandingPage extends React.Component {
        </div>
     )
   }
+}
+
+LandingPage.propTypes = {
+  mainIMDBID: PropTypes.string.isRequired,
+  alternateIMDBIDs: PropTypes.arrayOf(PropTypes.string).isRequired,
 }

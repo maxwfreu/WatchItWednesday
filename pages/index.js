@@ -5,9 +5,18 @@ import "../styles/landing_page.scss"
 
 export default class Home extends React.Component {
   render() {
+    const alternateIMDBIDS = [
+      'tt0417433', // Annapolis
+      'tt0120591', // Armageddon
+      'tt0338466', // Stuck on You
+      'tt0478087', // 21
+    ]
     return (
       <Main>
-        <LandingPage />
+        <LandingPage
+          mainIMDBID="tt0448011"
+          alternateIMDBIDs={alternateIMDBIDS}
+        />
       </Main>
     )
   }

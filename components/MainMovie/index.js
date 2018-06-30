@@ -8,12 +8,11 @@ export default class MainMovie extends React.Component {
     return (
       <div className="main-movie-wrap">
         <MovieCard
-          source={this.props.source}
+          source={this.props.poster}
           isMain
         />
         <MainMovieDetails
-          name="Knowing"
-          cast="Nicolas Cage, Rose Byrne, Chandler Canterbury"
+          {...this.props}
         />
       </div>
     )
@@ -21,9 +20,19 @@ export default class MainMovie extends React.Component {
 }
 
 MainMovie.propTypes = {
-  source: PropTypes.string,
+  cast: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
+  year: PropTypes.string,
+  cast: PropTypes.string,
+  plot: PropTypes.string,
+  poster: PropTypes.string,
 }
 
 MainMovie.defaultProps = {
-  source: null,
+  title: '...',
+  year: '...',
+  cast: '...',
+  plot: '...',
+  poster: null,
 }
