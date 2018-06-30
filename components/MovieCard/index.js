@@ -7,7 +7,7 @@ export default class MovieCard extends React.Component {
     return (
       <React.Fragment>
         {this.props.source ? (
-           <img src={this.props.source} alt="Movie Art" />
+           <img src={this.props.source} alt="Movie Art" className={mainClass} />
         ):(
           <div className={`default-image-art ${mainClass}`} />
         )}

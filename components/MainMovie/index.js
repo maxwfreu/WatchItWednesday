@@ -11,7 +11,10 @@ export default class MainMovie extends React.Component {
           source={this.props.source}
           isMain
         />
-        <MainMovieDetails />
+        <MainMovieDetails
+          name="Knowing"
+          cast="Nicolas Cage, Rose Byrne, Chandler Canterbury"
+        />
       </div>
     )
   }

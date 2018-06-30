@@ -7,8 +7,10 @@ export default class LandingPage extends React.Component {
   render() {
     return (
        <div className="landing-wrap">
-         <MainMovie />
-         <AlternateMovies />
+        <MainMovie
+          source="../../static/images/knowing.jpg"
+        />
+        <AlternateMovies />
        </div>
     )
   }
