@@ -3,6 +3,7 @@ $font-size: 50px;
 body {
   background-color: #12130F;
   color: #E5DCC5;
+  font-family: 'Karla', sans-serif;
 }
 
 .landing-wrap {
@@ -20,8 +21,8 @@ body {
 }
 
 .main-image-art {
-  height: 400px;
-  min-width: 250px;
+  height: 450px;
+  min-width: 300px;
   width: 200px;
 }
 
@@ -40,6 +41,10 @@ body {
 .main-movie-details-wrap {
   padding-left: 5%;
   width: 100%;
+
+  h1:first-of-type {
+    margin-top: 0;
+  }
 }
 
 .alternate-movies-wrap {
@@ -52,4 +57,13 @@ body {
     margin-right: 2%;
     margin-left: 2%;
   }
+}
+
+.about-header {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.about-text {
+  font-size: 18px;
 }

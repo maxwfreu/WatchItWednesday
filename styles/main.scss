@@ -1,0 +1,27 @@
+body {
+  background-color: #12130F;
+  color: #E5DCC5;
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+}
+.tab-bar {
+	background-color: #C14953;
+  height: 50px;
+  align-items: center;
+  display: flex;
+  padding-left: 10%;
+  padding-right: 10%;
+
+  a {
+    color: #E5DCC5;
+    text-decoration: none;
+
+    &:not(:first-of-type) {
+      margin-left: 20px;
+    }
+  }
+
+  p {
+    margin: 0 auto;
+  }
+}

@@ -6,6 +6,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <link rel="stylesheet" href="/_next/static/style.css" />
+          <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
         </Head>
         <body>
           <Main />
