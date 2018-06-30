@@ -20,6 +20,7 @@ export default class MainMovie extends React.Component {
 }
 
 MainMovie.propTypes = {
+  imdbID: PropTypes.string.isRequired,
   cast: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
