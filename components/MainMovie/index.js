@@ -30,7 +30,7 @@ export default class MainMovie extends React.Component {
   render() {
     const trailerClass = this.state.showTrailer ? 'in' : '';
     return (
-      <div className="main-movie-wrap">
+      <div className={`main-movie-wrap  ${trailerClass}`}>
         <MaxSays
           imdbID={this.props.imdbID}
           title={this.props.title}

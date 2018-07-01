@@ -114,7 +114,7 @@ body {
   justify-content: center;
   width: 100%;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 
   .main-section {
     padding-top: 2%
@@ -122,6 +122,10 @@ body {
 
   p {
     font-size: 14px;
+  }
+
+  &.in {
+    overflow: visible;
   }
 }
 
@@ -131,7 +135,10 @@ body {
   right: -1000px;
   height: 100%;
   z-index: 1;
-  transition: 1s ease-in-out right;
+  opacity: 0;
+  transition:
+    1s ease-in-out right,
+    1s ease-in-out opacity;
 
   &:after {
     height: 100%;
@@ -164,6 +171,7 @@ body {
 
   &.in {
     right: 0;
+    opacity: 1;
   }
 }
 
@@ -279,7 +287,7 @@ body {
 }
 
 .movie-card-img {
-  width: 25%;
+  width: 100%;
   padding-left: 1%;
   padding-right: 1%;
   display: flex;
@@ -323,6 +331,10 @@ body {
 @media (min-width: $sm) {
   .main-movie-wrap {
     flex-wrap: nowrap;
+  }
+
+  .movie-card-img {
+    width: 25%;
   }
 
   .main-movie-details-wrap {
