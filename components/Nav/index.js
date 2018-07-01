@@ -14,6 +14,11 @@ export default class Nav extends React.Component {
           <a href="#about"> About </a>
         </div>
         {this.props.children}
+        <footer>
+          <p>Made with<span>&#9829;</span> in San Francisco</p>
+          <p>Built by <a href="https://maxfreundlich.com">Max Freundlich</a></p>
+          <p>Designed by <a href="https://www.ronniesiu.com">Ronnie Siu</a></p>
+        </footer>
       </React.Fragment>
     )
   }
