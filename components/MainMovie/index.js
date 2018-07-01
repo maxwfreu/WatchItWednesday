@@ -25,11 +25,11 @@ export default class MainMovie extends React.Component {
   }
 
   showTrailer() {
-    console.log("showtrailer")
     this.setState({
       showTrailer: true,
-    })
+    });
   }
+
   render() {
     const trailerClass = this.state.showTrailer ? 'in' : '';
     return (

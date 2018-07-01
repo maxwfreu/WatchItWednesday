@@ -3,7 +3,26 @@ import PropTypes from 'prop-types';
 import MyTake from '../../static/MyTake';
 
 export default class MaxSays extends React.Component {
-  // componentDidMount() 
+  constructor(props) {
+    super(props);
+    this.renderShrugs = this.renderShrugs.bind(this);
+  }
+  renderShrugs() {
+    const shrugs = [];
+    const rating = MyTake[this.props.imdbID].rating;
+    const half = MyTake[this.props.imdbID].half;
+    for (var i = 0; i < 5; i++) {
+      if (i == rating-1 && half) {
+        shrugs.push(<span className="active">¯\_(ツ</span>);
+        shrugs.push(<span className="active half">)_/¯</span>);
+      } else if (i < rating) {
+        shrugs.push(<span className="active">¯\_(ツ)_/¯</span>);
+      } else {
+        shrugs.push(<span>¯\_(ツ)_/¯</span>)
+      }
+    }
+    return shrugs;
+  }
   render() {
     let rottenTomatoesRating = 'Unknown';
     for(let i in this.props.ratings) {
@@ -13,14 +32,33 @@ export default class MaxSays extends React.Component {
         break;
       }
     }
+    let rottenImg = 'rotten';
+    if (rottenTomatoesRating !== 'Unknown') {
+      const rottenNum = parseInt(rottenTomatoesRating.replace('%', '').trim(), 10);
+      if (rottenNum > 59) {
+        rottenImg = 'fresh';
+      }
+    }
+    const opinionShrugs = this.renderShrugs();
     return (
       <div className="max-says-wrap main-section">
         <h1>{this.props.title}</h1>
         <h5>{this.props.year}</h5>
-        <h4>Max Says</h4>
-        <p>{MyTake[this.props.imdbID]}</p>
+        <div className="max-says-title">
+          <h4>Max Says</h4>
+          <a href="#maxwho">(Max Who?)</a>
+        </div>
+        <p>{MyTake[this.props.imdbID].opinion}</p>
+        <h4>Wednesday Rating</h4>
+        {opinionShrugs}
+        <div className="wednesday-rating">
+
+        </div>
         <h4>Rotten Tomatoes</h4>
-        <p>{rottenTomatoesRating}</p>
+        <div className="rotten-tomatoes">
+          <img src={`../../static/images/rotten-${rottenImg}.png`} />
+          <p>{rottenTomatoesRating}</p>
+        </div>
       </div>
     )
   }
