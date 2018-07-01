@@ -46,7 +46,7 @@ export default class MaxSays extends React.Component {
         <h5>{this.props.year}</h5>
         <div className="max-says-title">
           <h4>Max Says</h4>
-          <a href="#maxwho">(Max Who?)</a>
+          <a href="#maxwho">?</a>
         </div>
         <p>{MyTake[this.props.imdbID].opinion}</p>
         <h4>Wednesday Rating</h4>

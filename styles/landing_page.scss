@@ -30,15 +30,26 @@ body {
 
 // Main Movie
 .max-says-title {
-  align-items: baseline;
+  align-items: center;
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 
   a {
-    color: #fff;
+    color: $highlight-color;
     font-size: 10px;
     text-decoration: none;
+    border: 2px solid $highlight-color;
+    border-radius: 50%;
+    height: 13px;
+    width: 13px;
+    text-align: center;
+    font-size: 11px;
+
+    &:hover {
+      border: 2px solid #fff;
+      color: #fff;
+    }
   }
 }
 
@@ -113,6 +124,11 @@ body {
     &:focus,
     &:active {
       outline: 0,
+    }
+
+    &:hover {
+    border: 2px solid #fff;
+    color: #fff;
     }
   }
 }
