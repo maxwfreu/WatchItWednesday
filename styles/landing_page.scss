@@ -113,6 +113,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  position: relative;
 
   .main-section {
     padding-top: 2%
@@ -120,6 +121,48 @@ body {
 
   p {
     font-size: 14px;
+  }
+}
+
+.movie-trailer {
+  position: absolute;
+  width: 75%;
+  right: -1000px;
+  height: 100%;
+  z-index: 1;
+  transition: 1s ease-in-out right;
+
+  &:after {
+    height: 100%;
+    width: 100%;
+    content: '';
+    position: absolute;
+    background-color: $black-color;
+    z-index: -1;
+    right: -100px;
+  }
+
+  button {
+    background-color: $highlight-color;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 16px;
+    z-index: 1;
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+
+  &.in {
+    right: 0;
   }
 }
 

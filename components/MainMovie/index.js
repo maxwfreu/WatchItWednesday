@@ -3,9 +3,32 @@ import PropTypes from 'prop-types';
 import MainMovieCard from './MainMovieCard';
 import MainMovieDetails from './MainMovieDetails';
 import MaxSays from './MaxSays';
+import Trailers from '../../static/Trailers';
 
 export default class MainMovie extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showTrailer: false,
+    }
+    this.hideTrailer = this.hideTrailer.bind(this);
+    this.showTrailer = this.showTrailer.bind(this);
+  }
+
+  hideTrailer() {
+    this.setState({
+      showTrailer: false,
+    })
+  }
+
+  showTrailer() {
+    console.log("showtrailer")
+    this.setState({
+      showTrailer: true,
+    })
+  }
   render() {
+    const trailerClass = this.state.showTrailer ? 'in' : '';
     return (
       <div className="main-movie-wrap">
         <MaxSays
@@ -19,9 +42,22 @@ export default class MainMovie extends React.Component {
         />
         <MainMovieCard
           source={this.props.poster}
+          showTrailer={this.showTrailer}
           isMain
         />
+        <div className={`movie-trailer ${trailerClass}`}>
+          <iframe
+            width="100%"
+            height="100%"
+            src={Trailers[this.props.imdbID]}
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen>
+          </iframe>
+          <button onClick={this.hideTrailer}>X</button>
+        </div>
       </div>
+
     )
   }
 }
