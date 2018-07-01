@@ -3,17 +3,19 @@
 body {
   background-color: $background-color;
   color: $text-color;
-  font-family: 'Karla', sans-serif;
+  font-family: 'Lato', sans-serif;
   margin: 0;
+  font-size: 16px;
 }
 
 .tab-bar {
   align-items: center;
-  background-color: $highlight-color;
+  background-color: $black-color;
   display: flex;
   height: 50px;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 4%;
+  padding-right: 4%;
+  font-size: 12px;
 
   a {
     color: $text-color;
@@ -22,10 +24,17 @@ body {
     &:not(:first-of-type) {
       margin-left: 20px;
     }
+
+    &:first-of-type {
+      font-size: 16px;
+      color: $highlight-color;
+    }
   }
 
   p {
     margin: 0 auto;
+    letter-spacing: 4px;
+    text-transform: uppercase;
   }
 }
 

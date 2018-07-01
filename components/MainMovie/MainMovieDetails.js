@@ -1,8 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from '../MovieCard';
-import MyTake from '../../static/MyTake';
+import AvailableOn from '../../static/AvailableOn';
+
 export default class MainMovieDetails extends React.Component {
+  constructor(props) {
+    super(props);
+    this.parseGenre = this.parseGenre.bind(this);
+  }
+
+  parseGenre() {
+    if(!this.props.genre) return;
+    return this.props.genre.replace(/, /g, ' • ');
+  }
   render() {
     if (this.props.title === '...') {
       return (
@@ -11,22 +21,34 @@ export default class MainMovieDetails extends React.Component {
         </div>
         )
     }
+    const genre = this.parseGenre();
+    const availableOn = AvailableOn[this.props.imdbID];
     return (
-      <div className="main-movie-details-wrap">
+      <div className="main-movie-details-wrap main-section">
         <div>
-          <div className="main-movie-details-title">
-            <h1>{this.props.title} ({this.props.year})</h1>
-            <p>&nbsp;&nbsp;&bull;&nbsp;&nbsp;{this.props.runtime}&nbsp;&nbsp;&bull;&nbsp;&nbsp;{this.props.rated}</p>
-          </div>
-          <h4>Genre</h4>
-          <p>{this.props.genre}</p>
-          <h4>Cast</h4>
-          <p>{this.props.cast}</p>
-          <h3> Synopsis </h3>
+          <p className="genre">{genre}</p>
+          <h4> Synopsis </h4>
           <p>{this.props.plot}</p>
-          <h3> My Take </h3>
-          <p>{MyTake[this.props.imdbID]}</p>
+          <div className="details">
+            <div>
+              <h4>Director</h4>
+              <p>{this.props.director}</p>
+              <h4>Cast</h4>
+              <p>{this.props.cast}</p>
+              <h4>Running time</h4>
+              <p>{this.props.runtime}</p>
+            </div>
+            <div className="available-on">
+              <h4>Available On</h4>
+              {availableOn.map((item, idx) => (
+                <div>
+                  <img src={`../../static/images/${item.domain.toLowerCase().replace(/ /g, '')}.png`} />
+                  <a className="movie-link" href={item.link} key={item.link}>{item.domain}</a>
+                </div>
+              ))}
+            </div>
           </div>
+        </div>
       </div>
     )
   }
@@ -35,7 +57,6 @@ export default class MainMovieDetails extends React.Component {
 MainMovieDetails.propTypes = {
   imdbID: PropTypes.string.isRequired,
   cast: PropTypes.string,
-  name: PropTypes.string,
   title: PropTypes.string,
   year: PropTypes.string,
   cast: PropTypes.string,
@@ -43,6 +64,8 @@ MainMovieDetails.propTypes = {
   poster: PropTypes.string,
   rated: PropTypes.string,
   genre: PropTypes.string,
+  director: PropTypes.string,
+  runtime: PropTypes.string,
 }
 
 MainMovieDetails.defaultProps = {
@@ -52,5 +75,7 @@ MainMovieDetails.defaultProps = {
   plot: '...',
   rated: '',
   genre: '',
+  director: '...',
   poster: null,
+  runtime: '...',
 }

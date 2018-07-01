@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import Main from '../components/Main';
+import Nav from '../components/Nav';
 import LandingPage from '../components/LandingPage';
 import "../styles/landing_page.scss"
 
@@ -17,12 +17,12 @@ export default class Home extends React.Component {
       'tt0478087', // 21
     ]
     return (
-      <Main>
+      <Nav>
         <LandingPage
           mainIMDBID="tt0448011" // Knowing
           alternateIMDBIDs={alternateIMDBIDS}
         />
-      </Main>
+      </Nav>
     )
   }
 }

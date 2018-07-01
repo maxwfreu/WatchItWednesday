@@ -4,21 +4,88 @@ body {
   background-color: $background-color;
   color: $text-color;
   font-family: 'Karla', sans-serif;
+  font-weight: 300;
+
+  p {
+    line-height: 1.3em;
+  }
+}
+
+//Landing Page
+
+.landing-page-main-section {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2%;
+  padding-right: 5%;
 }
 
 .landing-wrap {
   display: flex;
   flex-direction: column;
   padding-bottom: 2%;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 2%;
 }
 
+// Main Movie
+.max-says-wrap {
+  background-color: $black-color;
+  padding-left: 4%;
+  padding-right: 1%;
+  width: 25%;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    margin-bottom: 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  h5 {
+    margin: 0;
+    font-weight: 200;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.main-movie-card-wrap {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  button {
+    border-radius: 2.25em;
+    background-color: transparent;
+    border: 2px solid $highlight-color;
+    color: $highlight-color;
+    width: 50%;
+    height: 38px;
+    margin-top: 5%;
+    cursor: pointer;
+
+    &:focus,
+    &:active {
+      outline: 0,
+    }
+  }
+}
+
 .main-image {
-  height: 450px;
-  min-width: 300px;
-  width: 200px;
+  width: 100%;
+  height: auto;
 }
 
 .default-image {
@@ -46,6 +113,14 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+
+  .main-section {
+    padding-top: 2%
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
 
 .main-movie-details-loading-wrap {
@@ -55,28 +130,63 @@ body {
   width: 100%;
 }
 
+.genre {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: $highlight-color;
+}
+
 .main-movie-details-wrap {
-  width: 100%;
+  width: 50%;
 
   h1:first-of-type {
     margin-top: 0;
   }
 
-  h3,
   h4 {
-    color: $highlight-color;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 300;
   }
 
-  h4 {
-    margin-top: 0;
+  p {
+    font-size: 13px;
   }
 
-  .main-movie-details-title {
+  .details {
     display: flex;
+    flex-direction: row;
 
-    p {
-      align-self: center;
-      margin-top: 0;
+    div:first-of-type {
+      width: 60%;
+      padding-right: 5%;
+    }
+  }
+
+  .available-on {
+    display: flex;
+    flex-direction: column;
+
+    div:first-of-type {
+      display: flex;
+      flex-direction: row;
+    }
+
+    div {
+      margin-top: 13px;
+      align-items: center;
+      display: flex;
+    }
+
+    img {
+      height: 20px;
+    }
+
+    a.movie-link {
+      margin-left: 10px;
+      text-decoration: none;
+      color: $text-color;
     }
   }
 }
@@ -85,7 +195,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 3%;
 
 
   .alternate-art-loading {
@@ -101,15 +211,7 @@ body {
     max-width: 300px;
     width: 100%;
   }
-}
 
-.about-header {
-  margin-top: 80px;
-  text-align: center;
-}
-
-.about-text {
-  font-size: 18px;
 }
 
 .loading-image-art:after{
@@ -122,47 +224,57 @@ body {
   position: absolute;
   -webkit-animation: shine 1.3s ease-in-out infinite;
 }
+
+.section-title {
+  width: 25%;
+  font-size: 22px;
+  font-weight: 300;
+  border-top: 1px solid #fff;
+  padding-top: 1%;
+  margin-bottom: 0;
+}
+
+.movie-card-img {
+  width: 25%;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  flex-direction: column;
+
+  div {
+    background-color: $black-color;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+
+  h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .genre {
+    letter-spacing: 2px;
+    font-size: 10px;
+  }
+}
+
+.landing-about-wrap {
+  width: 50%;
+
+  p {
+    font-size: 14px;
+    font-weight: 100;
+  }
+}
+
 @-webkit-keyframes shine{
-  // 0%,100%{
-  //   margin-top: -100px;
-    
-  // }
-  // 50%{
-  //   margin-top: 800px;
-  // }
   0% {transform:translateY(-140%) rotate(30deg);}
   100% {transform:translateY(550%) rotate(30deg);}
 }
-
-// /* Shine */
-// .loading-image-art:after {
-//   content:'';
-//   top:0;
-//   // transform:translateY(100%);
-//   width:100%;
-//   height: 50%;
-//   position: absolute;
-//   z-index: 0;
-//   animation: slide 1s infinite;
-   
-//   /* 
-//   CSS Gradient - complete browser support from http://www.colorzilla.com/gradient-editor/ 
-//   */
-//   background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(128,186,232,0) 99%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-//   background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(50%,rgba(255,255,255,0.8)), color-stop(99%,rgba(128,186,232,0)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
-//   background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
-//   background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
-//   background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* IE10+ */
-//   background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.8) 50%,rgba(128,186,232,0) 99%,rgba(125,185,232,0) 100%); /* W3C */
-//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
-// }
-
-// /* animation */
-
-// @keyframes slide {
-//   0% {transform:translateY(0);}
-//   100% {transform:translateY(150%);}
-// }
 
 @media (min-width: $sm) {
   .main-movie-wrap {
@@ -170,7 +282,8 @@ body {
   }
 
   .main-movie-details-wrap {
-    padding-left: 5%;
+    padding-left: 4%;
+    padding-right: 4%;
   }
 
   .alternate-movies-wrap {
@@ -179,7 +292,7 @@ body {
     .default-image {
       margin-bottom: 0;
       margin-top: 0;
-      width: 25%;
+      width: 100%;
 
       &:first-of-type, {
         margin-left: 0;

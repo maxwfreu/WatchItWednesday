@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
           <meta name="theme-color" content="#ffffff" />
           <meta name="google-site-verification" content="iF6G-tMnLJsk9rj0yKs365B5UVfg9vCQO40glWNUqsA" />
           <link rel="stylesheet" href="/_next/static/style.css" />
-          <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" />
         </Head>
         <body>
           <Main />

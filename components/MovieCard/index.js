@@ -12,7 +12,13 @@ export default class MovieCard extends React.Component {
     return (
       <React.Fragment>
         {this.props.source ? (
+          <div className="movie-card-img">
            <img src={this.props.source} alt="Movie Art" className={mainImgClass} onClick={this.props.onClick} />
+           <div>
+              <h4>{this.props.title}</h4>
+              <p className="genre">{this.props.genre}</p>
+            </div>
+          </div>
         ):(
           <div className={mainArtClass} />
         )}
@@ -23,12 +29,16 @@ export default class MovieCard extends React.Component {
 
 MovieCard.propTypes = {
   source: PropTypes.string,
+  genre: PropTypes.string,
   isMain: PropTypes.bool,
   onClick: PropTypes.func,
+  title: PropTypes.string,
 }
 
 MovieCard.defaultProps = {
   source: null,
+  genre: '',
+  title: '',
   isMain: false,
   onClick: () => true,
 }
