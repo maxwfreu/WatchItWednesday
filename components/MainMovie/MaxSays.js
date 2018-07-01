@@ -13,12 +13,12 @@ export default class MaxSays extends React.Component {
     const half = MyTake[this.props.imdbID].half;
     for (var i = 0; i < 5; i++) {
       if (i == rating-1 && half) {
-        shrugs.push(<span className="active">¯\_(ツ</span>);
-        shrugs.push(<span className="active half">)_/¯</span>);
+        shrugs.push(<span className="active" key={`active-${i}`}>¯\_(ツ</span>);
+        shrugs.push(<span className="active half"  key={`active-${i}-half`}>)_/¯</span>);
       } else if (i < rating) {
-        shrugs.push(<span className="active">¯\_(ツ)_/¯</span>);
+        shrugs.push(<span className="active"  key={`active-${i}`}>¯\_(ツ)_/¯</span>);
       } else {
-        shrugs.push(<span>¯\_(ツ)_/¯</span>)
+        shrugs.push(<span key={`active-${i}`}>¯\_(ツ)_/¯</span>)
       }
     }
     return shrugs;

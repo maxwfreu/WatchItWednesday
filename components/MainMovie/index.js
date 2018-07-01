@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MediaQuery from 'react-responsive';
+
 import MainMovieCard from './MainMovieCard';
 import MainMovieDetails from './MainMovieDetails';
 import MaxSays from './MaxSays';
@@ -33,35 +35,52 @@ export default class MainMovie extends React.Component {
   render() {
     const trailerClass = this.state.showTrailer ? 'in' : '';
     return (
-      <div className={`main-movie-wrap  ${trailerClass}`}>
-        <MaxSays
-          imdbID={this.props.imdbID}
-          title={this.props.title}
-          year={this.props.year}
-          ratings={this.props.ratings}
-        />
-        <MainMovieDetails
-          {...this.props}
-        />
-        <MainMovieCard
-          source={this.props.poster}
-          showTrailer={this.showTrailer}
-          isMain
-        />
-        <div className={`movie-trailer ${trailerClass}`}>
-          <iframe
-            id="player"
-            width="100%"
-            height="100%"
-            src={Trailers[this.props.imdbID]}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen>
-          </iframe>
-          <button onClick={this.hideTrailer}>X</button>
+      <React.Fragment>
+        <div className={`main-movie-wrap  ${trailerClass}`}>
+          <MaxSays
+            imdbID={this.props.imdbID}
+            title={this.props.title}
+            year={this.props.year}
+            ratings={this.props.ratings}
+          />
+          <MainMovieDetails
+            {...this.props}
+          />
+          <MainMovieCard
+            source={this.props.poster}
+            showTrailer={this.showTrailer}
+            isMain
+          />
+          <MediaQuery query="(min-device-width: 1224px)">
+            <div className={`movie-trailer ${trailerClass}`}>
+              <iframe
+                id="player"
+                width="100%"
+                height="100%"
+                src={Trailers[this.props.imdbID]}
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen>
+              </iframe>
+              <button onClick={this.hideTrailer}>X</button>
+            </div>
+          </MediaQuery>
         </div>
-      </div>
-
+        <MediaQuery query="(max-device-width: 1224px)">
+          <div className={`movie-trailer-modal ${trailerClass}`}>
+            <iframe
+              id="player"
+              width="75%"
+              height="50%"
+              src={Trailers[this.props.imdbID]}
+              frameBorder="0"
+              allow="autoplay; encrypted-media"
+              allowFullScreen>
+            </iframe>
+            <button onClick={this.hideTrailer}>X</button>
+          </div>
+        </MediaQuery>
+      </React.Fragment>
     )
   }
 }

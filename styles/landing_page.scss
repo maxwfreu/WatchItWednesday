@@ -17,7 +17,6 @@ body {
   display: flex;
   flex-direction: column;
   padding-bottom: 2%;
-  padding-right: 5%;
 }
 
 .landing-wrap {
@@ -47,7 +46,7 @@ body {
   background-color: $black-color;
   padding-left: 4%;
   padding-right: 1%;
-  width: 25%;
+  width: 100%;
 
   h1 {
     margin: 0;
@@ -60,10 +59,10 @@ body {
     margin-bottom: 0;
     font-weight: 400;
     font-size: 14px;
+  }
 
-    &:first-of-type {
-      margin: 0;
-    }
+  .max-says-title h4 {
+    margin: 0;
   }
 
   h5 {
@@ -152,7 +151,8 @@ body {
   overflow: hidden;
 
   .main-section {
-    padding-top: 2%
+    padding-top: 2%;
+    padding-bottom: 2%;
   }
 
   p {
@@ -210,6 +210,46 @@ body {
   }
 }
 
+.movie-trailer-modal {
+  background-color: $black-color;
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  top: 0;
+  transition: 1s ease-in opacity;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+
+  button {
+    background-color: $highlight-color;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    margin-left: 16px;
+    z-index: 1;
+    top: 12%;
+    right: 8%;
+
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+
+  &.in {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
 .main-movie-details-loading-wrap {
   align-items: center;
   display: flex;
@@ -224,7 +264,7 @@ body {
 }
 
 .main-movie-details-wrap {
-  width: 50%;
+  width: 62%;
 
   h1:first-of-type {
     margin-top: 0;
@@ -279,12 +319,27 @@ body {
 }
 
 .alternate-movies-wrap {
-  align-items: center;
   display: flex;
   flex-direction: column;
   margin-top: 3%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
+  .default-image {
+    margin-bottom: 0;
+    margin-top: 0;
+    width: 100%;
 
+    &:first-of-type, {
+      margin-left: 0;
+    }
+
+    &:last-of-type, {
+      margin-right: 0;
+    }
+  }
   .alternate-art-loading {
     cursor: pointer;
     margin: 1%;
@@ -298,7 +353,6 @@ body {
     max-width: 300px;
     width: 100%;
   }
-
 }
 
 .loading-image-art:after{
@@ -326,14 +380,21 @@ body {
   padding-left: 1%;
   padding-right: 1%;
   display: flex;
+  align-items: center;
   flex-direction: column;
+  flex: 1 0 auto;
+  margin-bottom: 15px;
 
-  div {
-    background-color: $black-color;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+  .movie-card-details {
+    max-width: 300px;
+
+    div {
+      background-color: $black-color;
+      padding-left: 4%;
+      padding-right: 4%;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
   }
 
   h4 {
@@ -347,10 +408,19 @@ body {
     letter-spacing: 2px;
     font-size: 10px;
   }
+
+  .movie-card-img-wrap {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      margin: 0;
+    }
+  }
 }
 
 .landing-about-wrap {
-  width: 50%;
+  width: 100%;
 
   p {
     font-size: 14px;
@@ -370,6 +440,7 @@ body {
   p {
     padding-left: 15px;
     font-size: 16px;
+    margin: 0;
   }
 }
 
@@ -379,34 +450,42 @@ body {
 }
 
 @media (min-width: $sm) {
+  .main-movie-details-wrap {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
+  .movie-card-img {
+    width: 40%;
+  }
+
+  .max-says-wrap {
+    width: 25%;
+  }
+
+  .landing-page-main-section {
+    padding-right: 5%;
+  }
+
+  .landing-about-wrap {
+    width: 50%;
+  }
+}
+
+@media (min-width: $md) {
   .main-movie-wrap {
     flex-wrap: nowrap;
+  }
+
+  .main-movie-details-wrap {
+    width: 50%;
   }
 
   .movie-card-img {
     width: 25%;
   }
 
-  .main-movie-details-wrap {
-    padding-left: 4%;
-    padding-right: 4%;
-  }
-
   .alternate-movies-wrap {
-    flex-direction: row;
-
-    .default-image {
-      margin-bottom: 0;
-      margin-top: 0;
-      width: 100%;
-
-      &:first-of-type, {
-        margin-left: 0;
-      }
-
-      &:last-of-type, {
-        margin-right: 0;
-      }
-    }
+    flex-wrap: nowrap;
   }
 }

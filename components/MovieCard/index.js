@@ -13,10 +13,14 @@ export default class MovieCard extends React.Component {
       <React.Fragment>
         {this.props.source ? (
           <div className="movie-card-img">
-           <img src={this.props.source} alt="Movie Art" className={mainImgClass} onClick={this.props.onClick} />
-           <div>
-              <h4>{this.props.title}</h4>
-              <p className="genre">{this.props.genre}</p>
+            <div className="movie-card-img-wrap">
+              <img src={this.props.source} alt="Movie Art" className={mainImgClass} onClick={this.props.onClick} />
+              <div className="movie-card-details">
+                <div>
+                  <h4>{this.props.title}</h4>
+                  <p className="genre">{this.props.genre}</p>
+                </div>
+              </div>
             </div>
           </div>
         ):(

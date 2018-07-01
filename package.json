@@ -16,7 +16,8 @@
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-ga": "^2.5.3"
+    "react-ga": "^2.5.3",
+    "react-responsive": "^4.1.0"
   },
   "devDependencies": {
     "css-loader": "^0.28.11"
