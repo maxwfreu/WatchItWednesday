@@ -9,7 +9,7 @@ export default class Nav extends React.Component {
       <React.Fragment>
         <div className="tab-bar">
           <a href="#"> WIW </a>
-          <p>Wednesday, 7/4/201</p>
+          <p>Wednesday, 7/4/2018</p>
           <a href="#"> Home </a>
           <a href="#about"> About </a>
         </div>
