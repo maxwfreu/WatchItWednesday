@@ -6,6 +6,8 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <title>Watch it Wednesday</title>
+          <meta name="description" content="Find out what movies to watch this Wednesday. The best mediocre movies hand picked by a mediocre guy." />
+          <meta name="keywords" content="movies, movie suggestions, movie sugestions, movies to watch, best movies, moveis, good movies, recommended movies" />
           <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png" />
