@@ -47,8 +47,8 @@ body {
     font-size: 11px;
 
     &:hover {
-      border: 2px solid #fff;
-      color: #fff;
+      border: 2px solid $text-color;
+      color: $text-color;
     }
   }
 }
@@ -127,8 +127,8 @@ body {
     }
 
     &:hover {
-    border: 2px solid #fff;
-    color: #fff;
+    border: 2px solid $text-color;
+    color: $text-color;
     }
   }
 }
@@ -142,6 +142,8 @@ body {
   height: 400px;
   min-width: 100px;
   width: 80px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .loading-image-art {
@@ -208,7 +210,7 @@ body {
     width: 30px;
     padding: 0;
     border: 0;
-    color: #fff;
+    color: $text-color;
     cursor: pointer;
     position: absolute;
     margin-left: 16px;
@@ -246,7 +248,7 @@ body {
     width: 30px;
     padding: 0;
     border: 0;
-    color: #fff;
+    color: $text-color;
     cursor: pointer;
     position: absolute;
     margin-left: 16px;
@@ -340,7 +342,7 @@ body {
   margin-top: 3%;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   .default-image {
@@ -386,7 +388,7 @@ body {
   width: 25%;
   font-size: 22px;
   font-weight: 300;
-  border-top: 1px solid #fff;
+  border-top: 1px solid $text-color;
   padding-top: 1%;
   margin-bottom: 0;
 }
@@ -410,6 +412,8 @@ body {
       padding-right: 4%;
       padding-top: 5%;
       padding-bottom: 5%;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
   }
 
@@ -426,8 +430,10 @@ body {
   }
 
   .movie-card-img-wrap {
+    box-shadow: 0 5px 12px $black-color;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 
     img {
       margin: 0;
@@ -502,7 +508,7 @@ body {
   }
 
   .movie-card-img {
-    width: 25%;
+    width: 23%;
   }
 
   .alternate-movies-wrap {

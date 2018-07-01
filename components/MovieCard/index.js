@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 
 export default class MovieCard extends React.Component {
   render() {
-    // NOTE: this is probably the dumbest code I have ever written. I may or may not have had a few drinks.
-    let mainImgClass = this.props.isMain ? 'main-image' : 'default-image loading-image-art';
-    const mainArtClass = this.props.isMain ? 'main-art-loading loading-image-art' : 'default-image loading-image-art';
-    if (this.props.source && !this.props.isMain) {
+    let mainImgClass = 'default-image loading-image-art';
+    const mainArtClass = 'default-image loading-image-art';
+    if (this.props.source) {
       mainImgClass = 'default-image';
     }
     return (
@@ -34,7 +33,6 @@ export default class MovieCard extends React.Component {
 MovieCard.propTypes = {
   source: PropTypes.string,
   genre: PropTypes.string,
-  isMain: PropTypes.bool,
   onClick: PropTypes.func,
   title: PropTypes.string,
 }
@@ -43,6 +41,5 @@ MovieCard.defaultProps = {
   source: null,
   genre: '',
   title: '',
-  isMain: false,
   onClick: () => true,
 }
