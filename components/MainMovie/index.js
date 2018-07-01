@@ -16,6 +16,9 @@ export default class MainMovie extends React.Component {
   }
 
   hideTrailer() {
+    const player = document.querySelector('#player');
+    const pauseAction = JSON.stringify({event: 'command', func: 'pauseVideo'});
+    player.contentWindow.postMessage(pauseAction, 'https://www.youtube.com');
     this.setState({
       showTrailer: false,
     })
@@ -47,6 +50,7 @@ export default class MainMovie extends React.Component {
         />
         <div className={`movie-trailer ${trailerClass}`}>
           <iframe
+            id="player"
             width="100%"
             height="100%"
             src={Trailers[this.props.imdbID]}
