@@ -12,7 +12,6 @@ export default class MaxSays extends React.Component {
         rottenTomatoesRating = rating.Value;
         break;
       }
-      console.log(i);
     }
     return (
       <div className="max-says-wrap main-section">
@@ -31,7 +30,7 @@ MaxSays.propTypes = {
   imdbID: PropTypes.string.isRequired,
   title: PropTypes.string,
   year: PropTypes.string,
-  ratings: PropTypes.arrayOf(PropTypes.string),
+  ratings: PropTypes.arrayOf(PropTypes.object),
 }
 
 MaxSays.defaultProps = {

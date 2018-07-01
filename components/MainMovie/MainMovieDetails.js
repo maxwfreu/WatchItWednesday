@@ -41,9 +41,9 @@ export default class MainMovieDetails extends React.Component {
             <div className="available-on">
               <h4>Available On</h4>
               {availableOn.map((item, idx) => (
-                <div>
+                <div key={item.link}>
                   <img src={`../../static/images/${item.domain.toLowerCase().replace(/ /g, '')}.png`} />
-                  <a className="movie-link" href={item.link} key={item.link}>{item.domain}</a>
+                  <a className="movie-link" href={item.link}>{item.domain}</a>
                 </div>
               ))}
             </div>

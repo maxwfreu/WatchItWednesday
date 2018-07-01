@@ -4,7 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export && cp static/robots.txt out/robots.txt"
+    "export": "npm run build && next export && cp static/robots.txt out/robots.txt && cp static/sitemap.xml out/sitemap.xml"
   },
   "dependencies": {
     "@zeit/next-sass": "^0.2.0",

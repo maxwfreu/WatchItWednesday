@@ -34,7 +34,7 @@ MainMovie.propTypes = {
   cast: PropTypes.string,
   plot: PropTypes.string,
   poster: PropTypes.string,
-  ratings: PropTypes.arrayOf(PropTypes.string),
+  ratings: PropTypes.arrayOf(PropTypes.object),
   director: PropTypes.string,
   runtime: PropTypes.string,
 }

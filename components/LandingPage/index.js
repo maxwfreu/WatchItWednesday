@@ -32,7 +32,6 @@ export default class LandingPage extends React.Component {
     const API_KEY = '246e0d59';
     const response = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${id}`);
     const json = await response.json();
-    console.log(json)
     const movieDetails = this.state.movieDetails;
     movieDetails[id] = {
       title: json.Title,
