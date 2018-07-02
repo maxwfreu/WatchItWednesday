@@ -6,11 +6,23 @@ export default class ChatRoom extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      initalized: false,
       messages: [],
+      firebaseReady: false,
     }
     this.postMessage = this.postMessage.bind(this);
     this.initalize = this.initalize.bind(this);
+    this.initalized = false;
+    this.firebaseInterval = null;
+  }
+
+  componentDidMount() {
+    const that = this;
+    this.firebaseInterval = setInterval(() => {
+      if(firebase.apps.length) {
+        that.setState({firebaseReady: true})
+        clearInterval(that.firebaseInterval)
+      }
+    }, 1000);
   }
 
   initalize() {
@@ -25,10 +37,8 @@ export default class ChatRoom extends React.Component {
         });
       }
     });
-    if (!this.state.initalized) {
-      that.setState({
-        initalized: true,
-      });
+    if (!this.initalized) {
+      this.initalized = true;
     }
   }
 
@@ -47,7 +57,7 @@ export default class ChatRoom extends React.Component {
     }
   }
   render() {
-    if (!this.state.initalized) {
+    if (!this.initalized) {
       this.initalize();
     } else if (this.state.messages.length > 0 && firebase.apps.length) {
       if(this.state.messages[this.state.messages.length-1].uid === firebase.auth().currentUser.uid) {
@@ -61,7 +71,6 @@ export default class ChatRoom extends React.Component {
         }
       }
     }
-    console.log("RENDER")
     return (
       <React.Fragment>
       <h5 id="talk" className="section-title">Talk About It</h5>
