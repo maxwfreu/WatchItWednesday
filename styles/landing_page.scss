@@ -492,7 +492,7 @@ body {
   max-height: 500px;
 
   .main-chat {
-    height: 91%;
+    height: 400px;;
     width: 100%;
     overflow-y: scroll;
     border-top-left-radius: 5px;
@@ -534,6 +534,7 @@ body {
 .landing-page-bottom-section {
   display: flex;
   flex-direction: column;
+  padding-left: 2%;
 }
 
 @-webkit-keyframes shine{
@@ -569,6 +570,10 @@ body {
 
   .landing-page-bottom-section {
     flex-direction: row;
+  }
+
+  .chat-room .main-chat {
+    height: 450px;
   }
 }
 
