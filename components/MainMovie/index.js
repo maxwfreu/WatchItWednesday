@@ -47,6 +47,7 @@ export default class MainMovie extends React.Component {
             {...this.props}
           />
           <MainMovieCard
+            title={this.props.title}
             source={this.props.poster}
             showTrailer={this.showTrailer}
             isMain

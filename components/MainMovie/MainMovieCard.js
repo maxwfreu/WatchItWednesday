@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TrackingButton from '../Tracking/TrackingButton';
 
 export default class MainMovieCard extends React.Component {
   render() {
@@ -11,7 +12,13 @@ export default class MainMovieCard extends React.Component {
         {this.props.source ? (
           <React.Fragment>
            <img src={this.props.source} alt="Movie Art" className={mainImgClass} />
-           <button onClick={this.props.showTrailer}> PLAY TRAILER </button>
+           <TrackingButton
+              action="Play Trailer"
+              category="Trailer"
+              onClick={this.props.showTrailer}
+              text="PLAY TRAILER"
+              label={this.props.title}
+           />
           </React.Fragment>
         ):(
           <div className={mainArtClass} />
@@ -22,11 +29,13 @@ export default class MainMovieCard extends React.Component {
 }
 
 MainMovieCard.propTypes = {
+  title: PropTypes.title,
   source: PropTypes.string,
   showTrailer: PropTypes.func,
 }
 
 MainMovieCard.defaultProps = {
+  title: '',
   source: null,
   showTrailer: () => (true),
 }

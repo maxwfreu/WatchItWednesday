@@ -1,14 +1,17 @@
 import React from 'react';
-import ReactGA from 'react-ga';
+import { connect } from 'react-redux';
 import Nav from '../components/Nav';
 import LandingPage from '../components/LandingPage';
+import { initTracking } from '../components/Tracking/Reducers';
 import "../styles/landing_page.scss"
+import ReactGA from 'react-ga';
 
-export default class Home extends React.Component {
+class Home extends React.Component {
   componentDidMount() {
-    ReactGA.initialize('UA-121642711-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    initTracking();
+    ReactGA.pageview('/');
   }
+
   render() {
     const alternateIMDBIDS = [
       'tt0417433', // Annapolis
@@ -16,6 +19,7 @@ export default class Home extends React.Component {
       'tt0338466', // Stuck on You
       'tt0478087', // 21
     ]
+    // let landingPage = withTracker(LandingPage);
     return (
       <Nav>
         <LandingPage
@@ -26,3 +30,9 @@ export default class Home extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = {
+  initTracking
+};
+
+export default connect(null, mapDispatchToProps)(Home);

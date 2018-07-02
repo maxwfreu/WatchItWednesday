@@ -10,14 +10,20 @@
     "@zeit/next-sass": "^0.2.0",
     "glob": "^7.1.2",
     "hoek": "^5.0.3",
+    "immutability-helper": "^2.7.1",
+    "install": "^0.12.1",
     "next": "^6.1.1",
     "node-sass": "^4.9.0",
+    "npm": "^6.1.0",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-ga": "^2.5.3",
-    "react-responsive": "^4.1.0"
+    "react-redux": "^5.0.7",
+    "react-responsive": "^4.1.0",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "css-loader": "^0.28.11"

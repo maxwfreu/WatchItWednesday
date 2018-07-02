@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from '../MovieCard';
 import AvailableOn from '../../static/AvailableOn';
+import TrackingLink from '../Tracking/TrackingLink';
 
 export default class MainMovieDetails extends React.Component {
   constructor(props) {
@@ -43,7 +44,14 @@ export default class MainMovieDetails extends React.Component {
               {availableOn.map((item, idx) => (
                 <div key={item.link}>
                   <img src={`../../static/images/${item.domain.toLowerCase().replace(/ /g, '')}.png`} />
-                  <a className="movie-link" href={item.link}>{item.domain}</a>
+                  <TrackingLink
+                    action="Clicked AvailableOn Link"
+                    category="Link"
+                    classes="movie-link"
+                    href={item.link}
+                    label={`${item.domain} | ${item.title}`}
+                    text={item.domain}
+                  />
                 </div>
               ))}
             </div>
