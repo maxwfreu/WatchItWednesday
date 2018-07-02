@@ -4,6 +4,7 @@ import MainMovie from '../MainMovie';
 import AlternateMovies from '../AlternateMovies';
 import AboutSection from './AboutSection';
 import MaxWho from './MaxWho';
+import ChatRoom from '../ChatRoom';
 
 export default class LandingPage extends React.Component {
   constructor(props) {
@@ -79,11 +80,18 @@ export default class LandingPage extends React.Component {
             setMainMovie={this.setMainMovie}
           />
         </div>
-        <div className="landing-wrap">
-          <AboutSection />
-        </div>
-        <div className="landing-wrap">
-          <MaxWho />
+        <div className="landing-page-bottom-section">
+          <div className="landing-details-wrap">
+            <div className="landing-wrap">
+              <AboutSection />
+            </div>
+            <div className="landing-wrap">
+              <MaxWho />
+            </div>
+          </div>
+          <div className="landing-details-wrap chat">
+            <ChatRoom />
+          </div>
         </div>
       </React.Fragment>
     )

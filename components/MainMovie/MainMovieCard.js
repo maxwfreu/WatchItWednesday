@@ -29,7 +29,7 @@ export default class MainMovieCard extends React.Component {
 }
 
 MainMovieCard.propTypes = {
-  title: PropTypes.title,
+  title: PropTypes.string,
   source: PropTypes.string,
   showTrailer: PropTypes.func,
 }

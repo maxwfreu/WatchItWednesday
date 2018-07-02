@@ -30,7 +30,6 @@ TrackingButton.propTypes = {
   category: PropTypes.string.isRequired,
   action: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   onClick: PropTypes.func,
   classes: PropTypes.string,

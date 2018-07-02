@@ -14,6 +14,12 @@ export default class MovieCard extends React.Component {
       action: 'Clicked Movie',
       label: this.props.title,
     });
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
     this.props.onClick();
   }
 
