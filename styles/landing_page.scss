@@ -495,6 +495,8 @@ body {
     height: 91%;
     width: 100%;
     overflow-y: scroll;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 
     div {
       color: $black-color;

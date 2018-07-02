@@ -19,6 +19,7 @@ export default class ChatRoom extends React.Component {
     const that = this;
     this.firebaseInterval = setInterval(() => {
       if(firebase.apps.length) {
+        console.log("FIREBASE READY")
         that.setState({firebaseReady: true})
         clearInterval(that.firebaseInterval)
       }
@@ -27,8 +28,9 @@ export default class ChatRoom extends React.Component {
 
   initalize() {
     if (!firebase.apps.length) return;
+    console.log("initalized")
     const that = this;
-    const ref = firebase.database().ref().child('chatroom');
+    const ref = firebase.database().ref().child('chatroom').limitToLast(50);
     ref.on('value', function(snapshot) {
       if(snapshot && snapshot.val()) {
         const messages = Object.values(snapshot.val());
@@ -57,7 +59,9 @@ export default class ChatRoom extends React.Component {
     }
   }
   render() {
-    if (!this.initalized) {
+    console.log("RERENDER")
+    if (!this.initalized && this.state.firebaseReady) {
+      console.log("TRYING TO INIT")
       this.initalize();
     } else if (this.state.messages.length > 0 && firebase.apps.length) {
       if(this.state.messages[this.state.messages.length-1].uid === firebase.auth().currentUser.uid) {
