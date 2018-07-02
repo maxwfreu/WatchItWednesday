@@ -13,6 +13,7 @@ export default class ChatRoom extends React.Component {
     this.initalize = this.initalize.bind(this);
     this.initalized = false;
     this.firebaseInterval = null;
+    this.initScroll = true;
   }
 
   componentDidMount() {
@@ -24,6 +25,17 @@ export default class ChatRoom extends React.Component {
         clearInterval(that.firebaseInterval)
       }
     }, 1000);
+  }
+
+  componentDidUpdate() {
+    if(this.initScroll && typeof document !== 'undefined') {
+      console.log(document.querySelector('.main-chat img'));
+      if (document.querySelector('.main-chat img')) {
+        const element = document.querySelector('.main-chat');
+        element.scrollTop = element.scrollHeight;
+        this.initScroll = false;
+      }
+    }
   }
 
   initalize() {
