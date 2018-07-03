@@ -41,7 +41,7 @@ export default class MaxSays extends React.Component {
     }
     const opinionShrugs = this.renderShrugs();
     return (
-      <div className="max-says-wrap main-section">
+      <div className="col-3 max-says-wrap main-section">
         <h1>{this.props.title}</h1>
         <h5>{this.props.year}</h5>
         <div className="max-says-title">

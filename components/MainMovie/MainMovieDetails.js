@@ -25,7 +25,7 @@ export default class MainMovieDetails extends React.Component {
     const genre = this.parseGenre();
     const availableOn = AvailableOn[this.props.imdbID];
     return (
-      <div className="main-movie-details-wrap main-section">
+      <div className="col-6 main-movie-details-wrap main-section">
         <div>
           <p className="genre">{genre}</p>
           <h4> Synopsis </h4>

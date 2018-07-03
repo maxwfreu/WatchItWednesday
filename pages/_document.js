@@ -8,7 +8,8 @@ export default class MyDocument extends Document {
           <title>Watch it Wednesday</title>
           <meta name="description" content="Find out what movies to watch this Wednesday. The best mediocre movies hand picked by a mediocre guy." />
           <meta name="keywords" content="movies, movie suggestions, movie sugestions, movies to watch, best movies, moveis, good movies, recommended movies" />
-          
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+
           <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png?v=1" />
           <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png?v=1" />
           <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png?v=1" />

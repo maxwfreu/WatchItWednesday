@@ -8,7 +8,7 @@ export default class MainMovieCard extends React.Component {
     const mainImgClass = 'main-image';
     const mainArtClass = 'main-art-loading loading-image-art';
     return (
-      <div className="main-movie-card-wrap main-section">
+      <div className="col-3 main-movie-card-wrap main-section">
         {this.props.source ? (
           <React.Fragment>
            <img src={this.props.source} alt="Movie Art" className={mainImgClass} />
