@@ -1,0 +1,3 @@
+export default {
+	FIREBASE_INITIALIZED: 'FIREBASE_INITIALIZED',
+}

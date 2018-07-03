@@ -2,13 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Nav from '../components/Nav';
 import LandingPage from '../components/LandingPage';
-import { initTracking } from '../components/Tracking/Reducers';
 import "../styles/landing_page.scss"
 import ReactGA from 'react-ga';
 
-class Home extends React.Component {
+export default class Home extends React.Component {
   componentDidMount() {
-    initTracking();
+    ReactGA.initialize('UA-121642711-1');
     ReactGA.pageview('/');
   }
 
@@ -30,9 +29,3 @@ class Home extends React.Component {
     )
   }
 }
-
-const mapDispatchToProps = {
-  initTracking
-};
-
-export default connect(null, mapDispatchToProps)(Home);

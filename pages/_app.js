@@ -1,8 +1,9 @@
 import App, {Container} from 'next/app'
 import React from 'react'
-import withReduxStore from '../lib/with-redux-store'
 import { Provider } from 'react-redux'
-import firebase from "firebase";
+import { initalizeFirebase } from '../components/Firebase';
+// import { initTracking } from '../components/Tracking/Reducers';
+import withReduxStore from '../lib/with-redux-store'
 
 class MyApp extends App {
   componentDidMount() {
@@ -14,25 +15,8 @@ class MyApp extends App {
       storageBucket: "watch-it-wednesday.appspot.com",
       messagingSenderId: "1051247859804"
     };
-    if (!firebase.apps.length) {
-      firebase.initializeApp(config);
-    }
-    firebase.auth().signInAnonymously().catch(function(error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-    });
-    // firebase.auth().onAuthStateChanged(function(user) {
-    //   if (user) {
-    //     // User is signed in.
-    //     var isAnonymous = user.isAnonymous;
-    //     var uid = user.uid;
-    //     console.log(uid);
-    //   } else {
-    //     console.log('signedOut')
-    //   }
-    // });
+    initalizeFirebase(config, this.props.reduxStore);
+    // initTracking(this.props.reduxStore);
   }
   render () {
     const {Component, pageProps, reduxStore} = this.props

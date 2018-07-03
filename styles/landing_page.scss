@@ -455,7 +455,6 @@ body {
 
   &.chat {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 
@@ -489,10 +488,10 @@ body {
   box-shadow: 0 5px 12px $black-color;
   height: 80%;
   width: 80%;
-  max-height: 500px;
+  max-height: 400px;
 
   .main-chat {
-    height: 400px;;
+    height: 91%;
     width: 100%;
     overflow-y: scroll;
     border-top-left-radius: 5px;
@@ -504,6 +503,7 @@ body {
       display: flex;
       flex-direction: row;
       align-items: center;
+      flex-wrap: wrap;
 
       &:nth-child(2n) {
         background-color: lightgray;
@@ -516,6 +516,12 @@ body {
 
       p {
         margin: 0;
+        width: calc(100% - 40px);
+      }
+
+      span {
+        font-size: 9px;
+        margin-left: 40px;
       }
     }
   }
@@ -528,6 +534,7 @@ body {
     border-radius: 5px;
     border-width: 5px;
     border-style: solid;
+    font-size: 16px;
   }
 }
 
@@ -572,9 +579,9 @@ body {
     flex-direction: row;
   }
 
-  .chat-room .main-chat {
-    height: 450px;
-  }
+  // .chat-room .main-chat {
+  //   height: 450px;
+  // }
 }
 
 @media (min-width: $md) {
