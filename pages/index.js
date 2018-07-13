@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Nav from '../components/Nav';
 import LandingPage from '../components/LandingPage';
-import "../styles/landing_page.scss"
+import "../styles/LandingPage/manifest.scss"
 import ReactGA from 'react-ga';
 
 export default class Home extends React.Component {

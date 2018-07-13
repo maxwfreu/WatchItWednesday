@@ -1,0 +1,89 @@
+.max-says-title {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+
+  a {
+    border: 2px solid $highlight-color;
+    border-radius: 50%;
+    color: $highlight-color;
+    font-size: 11px;
+    height: 13px;
+    text-align: center;
+    text-decoration: none;
+    width: 13px;
+
+    &:hover {
+      border: 2px solid $text-color;
+      color: $text-color;
+    }
+  }
+}
+
+.max-says-wrap {
+  background-color: $black-color;
+  padding-left: 4%;
+  padding-right: 1%;
+
+  h1 {
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  .max-says-title h4 {
+    margin: 0;
+  }
+
+  h5 {
+    font-weight: 200;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  span {
+    color: darkgray;
+    font-size: 10px;
+
+    &:not(:first-of-type) {
+      padding-left: 5px;
+    }
+
+    &.active {
+      color: $highlight-color;
+    }
+
+    &.half {
+      color: darkgray;
+      padding-left: 0;
+    }
+  }
+}
+
+.rotten-tomatoes {
+  align-items: center;
+  display: flex;
+  padding-top: 10px;
+
+  img {
+    height: 22px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+    padding-left: 15px;
+  }
+}
+
